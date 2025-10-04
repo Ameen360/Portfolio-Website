@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliu-Ameen Abdulrahman | Software Engineer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Background Animation Canvas -->
+    <canvas id="bgAnimation"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Aliu-Ameen</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-text">Software Engineer | Frontend Developer</h1>
+                <p class="animate-text-delay">I build engaging, scalable, and user-friendly web applications that blend
+                    creativity with technology.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">🚀 View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">📩 Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <!-- Replace with your actual image -->
+                        <div class="placeholder-image">AA</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hi there! 👋 I'm Aliu-Ameen Abdulrahman, a passionate Software Engineer with a knack for building
+                        engaging and scalable web applications. With over a year of hands-on experience, I've developed
+                        strong expertise in HTML, CSS, and JavaScript, while also growing my backend skills with PHP and
+                        Python.</p>
+                    <p>I specialize in crafting responsive, user-friendly, and performance-optimized solutions that
+                        blend clean design with solid functionality. Collaboration is at the core of my work—I enjoy
+                        working with diverse teams to bring fresh ideas to life and deliver impactful results.</p>
+                    <p>As a problem-solver committed to continuous learning, I'm always exploring better ways to merge
+                        creativity and technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
+                        <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
+                        <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                        <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-php"></i> PHP</div>
+                        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-item"><i class="fab fa-laravel"></i> Laravel</div>
+                        <div class="skill-item"><i class="fas fa-code"></i> Django</div>
+                        <div class="skill-item"><i class="fas fa-flask"></i> Flask</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
+                        <div class="skill-item"><i class="fas fa-database"></i> SQLite</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
+                        <div class="skill-item"><i class="fas fa-code"></i> VS Code</div>
+                        <div class="skill-item"><i class="fab fa-figma"></i> Figma</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-project">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Primelight Health Services</h3>
+                        <p>Developed a responsive rehab services platform with appointment booking and therapy info
+                            pages.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://primelight.online/" class="btn btn-sm">Live Demo</a>
+                            <a href="https://github.com/Ameen360/primelight" class="btn btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-project">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Student Portal System</h3>
+                        <p>Built a secure user portal for ICT services, improving workflow efficiency.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.summituniversity.edu.ng/myportal/students/" class="btn btn-sm">Live
+                                Demo</a>
+                            <a href="https://github.com/SUN-Hub-Group/new-student-portal" class="btn btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-project">
+                            <i class="fas fa-flask"></i></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ROYGBIV</h3>
+                        <p>ROYGBIV Analytical and Environmental Services Limited provides accredited laboratory analysis
+                            and environmental consulting services. The site was designed and built with modern frontend
+                            practices and fully responsive design.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ameen360.github.io/Roygbiv/" class="btn btn-sm">Live Demo</a>
+                            <a href="https://github.com/Ameen360/Roygbiv" class="btn btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-project">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A personal portfolio showcasing my expertise in building responsive, user-friendly, and
+                            performance-optimized solutions with clean design and solid functionality. Built to
+                            highlight
+                            collaboration, creativity, and impactful results.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm">Live Demo</a>
+                            <a href="#" class="btn btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Programmer II</h3>
+                        <h4>Summit University</h4>
+                        <p class="timeline-date">2024 - Present</p>
+                        <p>Designed and maintained ICT systems and web applications. Collaborated with cross-functional
+                            teams to optimize digital infrastructure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Freelance Developer</h3>
+                        <h4>Various Clients</h4>
+                        <p class="timeline-date">2021 - 2025</p>
+                        <p>Delivered custom web solutions for small businesses and startups, building responsive
+                            websites with modern frontend frameworks and well-structured backends. I also developed
+                            personal web projects and applications for continuous learning, and successfully built
+                            two robust, responsive websites for companies such as ROYGBIV and Primelight.
+                            Additionally, I collaborate with fellow tech professionals to create functional web
+                            applications as part of team-driven projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>B.Sc. Computer Science</h3>
+                        <h4>Al-Hikmah University, Ilorin</h4>
+                        <p class="education-date">Done 2021</p>
+                    </div>
+
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificate in Python Programming</h3>
+                        <h4>Castush Intergraded Limited</h4>
+                        <p class="education-date">Acquired 2024</p>
+                    </div>
+
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificate in Lead Assessor/Training of Trainers (ToT)</h3>
+                        <h4>HKV Academy (Powered by UNIDO)</h4>
+                        <p class="education-date">Acquired 2018</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certificate in Generative AI Mastermind</h3>
+                        <h4>Powerd by Outskill</h4>
+                        <p class="education-date">Acquired 2025</p>
+                    </div>
+
+                </div>
+                <!-- Add certifications here if available -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog & Insights</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-blog">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building an Offline LMS for Summit University</h3>
+                        <p class="blog-date">August 03, 2025</p>
+                        <p>At Summit University, we recently concluded the 2024/2025 academic session. I’m thrilled to
+                            share my
+                            experience building the offline Learning Management System (LMS) that students used for
+                            their general
+                            course exams. Leveraging my front-end development skills, I built this project from scratch
+                            using the
+                            open-source Moodle platform.</p>
+                        <a href="https://www.linkedin.com/posts/aliu-ameen-abdulrahman-aa1651197_softwaredevelopment-webdevelopment-front-activity-7358618947253936129-55uS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4xGdkBbRKImbeLpnt9uGH3CsiKdzz0RSg"
+                            class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-blog">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>From Coding to Prompting: The New Revolution in Software Engineering </h3>
+                        <p class="blog-date">Sep 4, 2025</p>
+                        <p>For decades, software engineering revolved around writing code in languages like Python or
+                            Java, creating
+                            detailed instructions for computers. With the advent of artificial intelligence (AI), a
+                            transformative
+                            skill—prompt engineering—is redefining the field, shifting the focus from coding to
+                            conversing with machines.</p>
+                        <a href="https://medium.com/@aliuame/from-coding-to-prompting-the-new-revolution-in-software-engineering-c84e9de375fe"
+                            class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-blog">
+                            <i class="fas fa-server"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Frontend vs Backend: Why I Love Doing Both</h3>
+                        <p class="blog-date">April 10, 2025</p>
+                        <p>The debate between frontend and backend specialization continues, but there are unique
+                            advantages to mastering both sides of web development...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>aliuame@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://www.linkedin.com/in/aliu-ameen-abdulrahman-aa1651197/"
+                                target="_blank">linkedin.com/in/Aliuameen</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p><a href="https://github.com/Ameen360" target="_blank">github.com/Aliu-Ameen</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">📩 Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Aliu-Ameen Abdulrahman — From concept to code — crafting the web that works.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/aliuameen" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/aliuameen" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:aliuameen@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
