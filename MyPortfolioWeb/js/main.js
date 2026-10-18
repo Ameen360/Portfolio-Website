@@ -16,7 +16,7 @@
     const yearEl = document.getElementById('year');
 
     const CONTACT_EMAIL = 'aliuame@gmail.com';
-    const WHATSAPP_NUMBER = '2348132122133'; // international format: no +, no spaces, no leading 0
+    const WHATSAPP_NUMBER = '2349157818147'; // international format: no +, no spaces, no leading 0
 
     // Footer year
     if (yearEl) {
@@ -212,7 +212,7 @@
                     '_blank', 'noopener');
 
                 showFormMessage('WhatsApp should open with your message ready. Just tap Send. ' +
-                    'If it doesn\'t, message me on WhatsApp at +234 813 212 2133.', 'success');
+                    'If it doesn\'t, message me on WhatsApp at +234 915 781 8147.', 'success');
             } else {
                 const body = message + '\n\n— ' + name + ' (' + email + ')';
                 const mailto = 'mailto:' + CONTACT_EMAIL +
