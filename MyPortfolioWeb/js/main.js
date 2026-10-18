@@ -1,284 +1,268 @@
 /**
  * Portfolio Website - Main JavaScript
  * Author: Aliu-Ameen Abdulrahman
- * Year: 2025
+ * Year: 2026
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function () {
     // DOM Elements
     const navbar = document.querySelector('.navbar');
     const navToggle = document.getElementById('navToggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('main section[id]');
     const backToTopBtn = document.getElementById('backToTop');
     const contactForm = document.getElementById('contactForm');
-    
-    // Mobile Navigation Toggle
-    navToggle.addEventListener('click', function() {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
+    const yearEl = document.getElementById('year');
+
+    const CONTACT_EMAIL = 'aliuame@gmail.com';
+    const WHATSAPP_NUMBER = '2348132122133'; // international format: no +, no spaces, no leading 0
+
+    // Footer year
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    // ===== Mobile Navigation =====
+    function setMenu(open) {
+        navToggle.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        document.body.classList.toggle('menu-open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    navToggle.addEventListener('click', function () {
+        setMenu(!navMenu.classList.contains('active'));
     });
-    
+
     // Close mobile menu when clicking a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            setMenu(false);
         });
     });
-    
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            setMenu(false);
+            navToggle.focus();
         }
     });
-    
-    // Section scroll animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-    
-    const sectionObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-    
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+
+    // Close if the screen grows past the mobile breakpoint
+    window.matchMedia('(min-width: 861px)').addEventListener('change', function (e) {
+        if (e.matches) setMenu(false);
     });
-    
-    // Back to top button
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
+
+    // ===== Scroll effects (navbar + back-to-top), batched per frame =====
+    let ticking = false;
+    function onScroll() {
+        const y = window.scrollY;
+        navbar.classList.toggle('scrolled', y > 50);
+        backToTopBtn.classList.toggle('show', y > 300);
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
         }
+    }, { passive: true });
+    onScroll();
+
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+
+    // ===== Section reveal + active nav link =====
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        sections.forEach(function (section) {
+            revealObserver.observe(section);
         });
-    });
-    
-    // Contact form validation and submission
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form fields
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const subjectInput = document.getElementById('subject');
-            const messageInput = document.getElementById('message');
-            
-            // Simple validation
-            let isValid = true;
-            
-            // Name validation
-            if (nameInput.value.trim() === '') {
-                showError(nameInput, 'Name is required');
-                isValid = false;
-            } else {
-                removeError(nameInput);
-            }
-            
-            // Email validation
-            if (emailInput.value.trim() === '') {
-                showError(emailInput, 'Email is required');
-                isValid = false;
-            } else if (!isValidEmail(emailInput.value)) {
-                showError(emailInput, 'Please enter a valid email');
-                isValid = false;
-            } else {
-                removeError(emailInput);
-            }
-            
-            // Subject validation
-            if (subjectInput.value.trim() === '') {
-                showError(subjectInput, 'Subject is required');
-                isValid = false;
-            } else {
-                removeError(subjectInput);
-            }
-            
-            // Message validation
-            if (messageInput.value.trim() === '') {
-                showError(messageInput, 'Message is required');
-                isValid = false;
-            } else {
-                removeError(messageInput);
-            }
-            
-            // If form is valid, submit it (or show success message)
-            if (isValid) {
-                // In a real application, you would send the form data to a server
-                // For this example, we'll just show a success message
-                
-                // Clear form fields
-                contactForm.reset();
-                
-                // Show success message
-                showFormMessage('Message sent successfully! I will get back to you soon.', 'success');
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    const formMessage = document.querySelector('.form-message');
-                    if (formMessage) {
-                        formMessage.remove();
-                    }
-                }, 5000);
-            }
+
+        // A section counts as "current" while it crosses the middle of the screen
+        const activeObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(function (link) {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        sections.forEach(function (section) {
+            activeObserver.observe(section);
+        });
+    } else {
+        sections.forEach(function (section) {
+            section.classList.add('visible');
         });
     }
-    
-    // Helper function to show form field error
+
+    // ===== Project filters =====
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const filter = button.dataset.filter;
+
+            filterButtons.forEach(function (btn) {
+                const isActive = btn === button;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', String(isActive));
+            });
+
+            projectCards.forEach(function (card) {
+                const categories = (card.dataset.category || '').split(' ');
+                const show = filter === 'all' || categories.indexOf(filter) !== -1;
+                card.hidden = !show;
+                card.classList.remove('fade-in');
+                if (show) {
+                    // Restart the fade animation
+                    void card.offsetWidth;
+                    card.classList.add('fade-in');
+                }
+            });
+        });
+    });
+
+    // ===== Contact form =====
+    if (contactForm) {
+        const fields = {
+            name: { el: document.getElementById('name'), label: 'Name' },
+            email: { el: document.getElementById('email'), label: 'Email' },
+            subject: { el: document.getElementById('subject'), label: 'Subject' },
+            message: { el: document.getElementById('message'), label: 'Message' }
+        };
+        const formMessage = contactForm.querySelector('.form-message');
+
+        function validateField(key) {
+            const field = fields[key];
+            const value = field.el.value.trim();
+
+            if (value === '') {
+                showError(field.el, field.label + ' is required');
+                return false;
+            }
+            if (key === 'email' && !isValidEmail(value)) {
+                showError(field.el, 'Please enter a valid email');
+                return false;
+            }
+            removeError(field.el);
+            return true;
+        }
+
+        // Re-check a field as soon as the user fixes it
+        Object.keys(fields).forEach(function (key) {
+            fields[key].el.addEventListener('input', function () {
+                if (fields[key].el.classList.contains('error')) {
+                    validateField(key);
+                }
+            });
+        });
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let firstInvalid = null;
+            Object.keys(fields).forEach(function (key) {
+                if (!validateField(key) && !firstInvalid) {
+                    firstInvalid = fields[key].el;
+                }
+            });
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+                showFormMessage('Please fix the highlighted fields.', 'error');
+                return;
+            }
+
+            const name = fields.name.el.value.trim();
+            const email = fields.email.el.value.trim();
+            const subject = fields.subject.el.value.trim();
+            const message = fields.message.el.value.trim();
+
+            // Which button was clicked: "whatsapp" or "email"
+            const channel = (e.submitter && e.submitter.dataset.channel) || 'whatsapp';
+
+            // No backend: hand the message to WhatsApp or the visitor's email app
+            if (channel === 'whatsapp') {
+                const text = '*New message from your portfolio*\n\n' +
+                    '*Name:* ' + name + '\n' +
+                    '*Email:* ' + email + '\n' +
+                    '*Subject:* ' + subject + '\n\n' +
+                    message;
+
+                window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text),
+                    '_blank', 'noopener');
+
+                showFormMessage('WhatsApp should open with your message ready. Just tap Send. ' +
+                    'If it doesn\'t, message me on WhatsApp at +234 813 212 2133.', 'success');
+            } else {
+                const body = message + '\n\n— ' + name + ' (' + email + ')';
+                const mailto = 'mailto:' + CONTACT_EMAIL +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(body);
+
+                window.location.href = mailto;
+
+                showFormMessage('Your email app should open with the message ready to send. ' +
+                    'If it doesn\'t, email me directly at ' + CONTACT_EMAIL + '.', 'success');
+            }
+
+            contactForm.reset();
+        });
+
+        function showFormMessage(message, type) {
+            formMessage.className = 'form-message ' + type;
+            formMessage.textContent = message;
+        }
+    }
+
+    // Show form field error
     function showError(input, message) {
-        // Remove any existing error
         removeError(input);
-        
-        // Create error element
+
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.innerText = message;
-        
-        // Add error styling to input
+        errorDiv.id = input.id + '-error';
+        errorDiv.textContent = message;
+
         input.classList.add('error');
-        
-        // Insert error message after input
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', errorDiv.id);
         input.parentNode.insertBefore(errorDiv, input.nextSibling);
     }
-    
-    // Helper function to remove error
+
+    // Remove form field error
     function removeError(input) {
         input.classList.remove('error');
-        
-        // Remove any existing error message
+        input.removeAttribute('aria-invalid');
+        input.removeAttribute('aria-describedby');
+
         const errorDiv = input.parentNode.querySelector('.error-message');
         if (errorDiv) {
             errorDiv.remove();
         }
     }
-    
-    // Helper function to validate email format
+
+    // Validate email format
     function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
-    
-    // Helper function to show form message (success/error)
-    function showFormMessage(message, type) {
-        // Remove any existing message
-        const existingMessage = document.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-        
-        // Create message element
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-message ${type}`;
-        messageDiv.innerText = message;
-        
-        // Add message to form
-        contactForm.appendChild(messageDiv);
-    }
-    
-    // Add CSS for form validation
-    const style = document.createElement('style');
-    style.textContent = `
-        .error {
-            border-color: #ff3860 !important;
-        }
-        
-        .error-message {
-            color: #ff3860;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-        
-        .form-message {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-        }
-        
-        .form-message.success {
-            background-color: rgba(76, 175, 80, 0.2);
-            color: #4caf50;
-        }
-        
-        .form-message.error {
-            background-color: rgba(255, 56, 96, 0.2);
-            color: #ff3860;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for navbar height
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Active navigation link based on scroll position
-    function setActiveNavLink() {
-        const scrollPosition = window.scrollY;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', setActiveNavLink);
-    
-    // Set active nav link on page load
-    setActiveNavLink();
-    
-    // Add CSS for active nav link
-    const navStyle = document.createElement('style');
-    navStyle.textContent = `
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: var(--accent-color);
-        }
-    `;
-    document.head.appendChild(navStyle);
 });

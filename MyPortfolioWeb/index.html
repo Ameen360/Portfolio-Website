@@ -4,31 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aliu-Ameen Abdulrahman | Software Engineer</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Aliu-Ameen Abdulrahman | Full Stack Developer</title>
+    <meta name="description"
+        content="Aliu-Ameen Abdulrahman — Full Stack Developer (React.js, Django, Laravel) with 4+ years building web applications, university portals and Moodle LMS, plus hands-on IT infrastructure and support experience.">
+    <meta name="author" content="Aliu-Ameen Abdulrahman">
+    <meta name="theme-color" content="#121212">
+
+    <!-- Social sharing preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aliu-Ameen Abdulrahman | Full Stack Developer">
+    <meta property="og:description"
+        content="Full Stack Developer building scalable web applications with React.js, Django and Laravel.">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a5d1a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23f5f5f5'%3EAA%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
 
+    <!-- Marks that JavaScript is running, so content is never hidden if scripts fail to load -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!-- Background Animation Canvas -->
-    <canvas id="bgAnimation"></canvas>
+    <canvas id="bgAnimation" aria-hidden="true"></canvas>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
+    <header class="navbar">
+        <nav class="container" aria-label="Main navigation">
             <div class="logo">
                 <a href="#home">Aliu-Ameen</a>
             </div>
-            <div class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -38,417 +59,728 @@
                 <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="animate-text">Software Engineer | Frontend Developer</h1>
-                <p class="animate-text-delay">I build engaging, scalable, and user-friendly web applications that blend
-                    creativity with technology.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">🚀 View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">📩 Hire Me</a>
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-badge animate-text"><span class="status-dot"></span> Open to remote opportunities</p>
+                    <p class="hero-greeting animate-text">Hi, I'm Aliu-Ameen Abdulrahman</p>
+                    <h1 class="animate-text">Full Stack <span class="highlight">Developer</span></h1>
+                    <p class="hero-stack animate-text-delay">React.js &middot; Python (Django) &middot; PHP (Laravel)
+                        &middot; MySQL</p>
+                    <p class="hero-tagline animate-text-delay">I design, build and maintain scalable web applications
+                        end to end — from responsive, accessible interfaces to robust backend systems — backed by
+                        hands-on IT infrastructure experience.</p>
+                    <div class="cta-buttons animate-text-delay">
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Hire Me</a>
+                    </div>
+                    <div class="hero-socials animate-text-delay">
+                        <a href="https://github.com/Ameen360" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aliu-ameen-abdulrahman-aa1651197/" target="_blank"
+                            rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:aliuame@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
+
+                <ul class="hero-stats" aria-label="Highlights">
+                    <li><strong>4+</strong><span>Years of experience</span></li>
+                    <li><strong>2,000+</strong><span>LMS users supported</span></li>
+                    <li><strong>3</strong><span>University portals built</span></li>
+                    <li><strong>End&#8209;to&#8209;end</strong><span>Front-end, back-end &amp; IT ops</span></li>
+                </ul>
             </div>
-        </div>
-    </section>
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About section"><i
+                    class="fas fa-chevron-down"></i></a>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-container">
-                        <!-- Replace with your actual image -->
-                        <div class="placeholder-image">AA</div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>Hi there! 👋 I'm Aliu-Ameen Abdulrahman, a passionate Software Engineer with a knack for building
-                        engaging and scalable web applications. With over a year of hands-on experience, I've developed
-                        strong expertise in HTML, CSS, and JavaScript, while also growing my backend skills with PHP and
-                        Python.</p>
-                    <p>I specialize in crafting responsive, user-friendly, and performance-optimized solutions that
-                        blend clean design with solid functionality. Collaboration is at the core of my work—I enjoy
-                        working with diverse teams to bring fresh ideas to life and deliver impactful results.</p>
-                    <p>As a problem-solver committed to continuous learning, I'm always exploring better ways to merge
-                        creativity and technology.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
-                        <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
-                        <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                        <div class="skill-item"><i class="fab fa-react"></i> React</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><i class="fab fa-php"></i> PHP</div>
-                        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                        <div class="skill-item"><i class="fab fa-laravel"></i> Laravel</div>
-                        <div class="skill-item"><i class="fas fa-code"></i> Django</div>
-                        <div class="skill-item"><i class="fas fa-flask"></i> Flask</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
-                        <div class="skill-item"><i class="fas fa-database"></i> SQLite</div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
-                        <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
-                        <div class="skill-item"><i class="fas fa-code"></i> VS Code</div>
-                        <div class="skill-item"><i class="fab fa-figma"></i> Figma</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-project">
-                            <i class="fas fa-hospital"></i>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-container">
+                            <!-- To use a photo: replace the div below with
+                                 <img src="images/profile.jpg" alt="Aliu-Ameen Abdulrahman"> -->
+                            <div class="placeholder-image">AA</div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Primelight Health Services</h3>
-                        <p>Developed a responsive rehab services platform with appointment booking and therapy info
-                            pages.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>PHP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://primelight.online/" class="btn btn-sm">Live Demo</a>
-                            <a href="https://github.com/Ameen360/primelight" class="btn btn-sm">GitHub</a>
+                    <div class="about-text">
+                        <p>Hi there! 👋 I'm <strong>Aliu-Ameen Abdulrahman</strong>, a results-driven <strong>Full
+                                Stack Developer</strong> with 4+ years of hands-on experience designing, building and
+                            maintaining scalable web applications from end to end. I craft responsive, accessible
+                            front-end interfaces with <strong>React.js</strong> and architect robust backend systems
+                            with <strong>Python (Django)</strong> and <strong>PHP (Laravel)</strong>.</p>
+                        <p>At Summit University I develop and optimise the student, staff and academic result portals,
+                            and I build and administer the university's <strong>Moodle Learning Management
+                                System</strong>, supporting 2,000+ users across online and offline environments. I
+                            also bring solid IT operations experience — networks, servers, Windows Server &amp; Active
+                            Directory, endpoint security and user support — so I understand how software behaves in
+                            production.</p>
+                        <p>I combine strong engineering fundamentals with a collaborative mindset, Generative AI
+                            literacy and a commitment to clean, maintainable code.</p>
+
+                        <ul class="about-facts">
+                            <li><i class="fas fa-location-dot"></i> Ilorin, Kwara, Nigeria</li>
+                            <li><i class="fas fa-briefcase"></i> Full Stack Developer</li>
+                            <li><i class="fas fa-globe"></i> Available for remote work</li>
+                            <li><i class="fas fa-graduation-cap"></i> B.Sc. Computer Science</li>
+                        </ul>
+
+                        <div class="about-actions">
+                            <a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Let's Work
+                                Together</a>
+                            <a href="#experience" class="btn btn-secondary"><i class="fas fa-briefcase"></i> My
+                                Experience</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-project">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
+                <!-- What I Do -->
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Full Stack Web Apps</h3>
+                        <p>Portals and platforms built end to end — data model, REST APIs, business logic and UI.</p>
                     </div>
-                    <div class="project-info">
-                        <h3>Student Portal System</h3>
-                        <p>Built a secure user portal for ICT services, improving workflow efficiency.</p>
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>JavaScript</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.summituniversity.edu.ng/myportal/students/" class="btn btn-sm">Live
-                                Demo</a>
-                            <a href="https://github.com/SUN-Hub-Group/new-student-portal" class="btn btn-sm">GitHub</a>
-                        </div>
+                    <div class="service-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Front-End Engineering</h3>
+                        <p>Responsive, accessible, pixel-perfect interfaces for web and mobile with React.js.</p>
                     </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-project">
-                            <i class="fas fa-flask"></i></i>
-                        </div>
+                    <div class="service-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend &amp; Databases</h3>
+                        <p>Django and Laravel backends with optimised MySQL, MariaDB, SQLite and MongoDB queries.</p>
                     </div>
-                    <div class="project-info">
-                        <h3>ROYGBIV</h3>
-                        <p>ROYGBIV Analytical and Environmental Services Limited provides accredited laboratory analysis
-                            and environmental consulting services. The site was designed and built with modern frontend
-                            practices and fully responsive design.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>PHP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://ameen360.github.io/Roygbiv/" class="btn btn-sm">Live Demo</a>
-                            <a href="https://github.com/Ameen360/Roygbiv" class="btn btn-sm">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-project">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>A personal portfolio showcasing my expertise in building responsive, user-friendly, and
-                            performance-optimized solutions with clean design and solid functionality. Built to
-                            highlight
-                            collaboration, creativity, and impactful results.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm">Live Demo</a>
-                            <a href="#" class="btn btn-sm">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Programmer II</h3>
-                        <h4>Summit University</h4>
-                        <p class="timeline-date">2024 - Present</p>
-                        <p>Designed and maintained ICT systems and web applications. Collaborated with cross-functional
-                            teams to optimize digital infrastructure.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Freelance Developer</h3>
-                        <h4>Various Clients</h4>
-                        <p class="timeline-date">2021 - 2025</p>
-                        <p>Delivered custom web solutions for small businesses and startups, building responsive
-                            websites with modern frontend frameworks and well-structured backends. I also developed
-                            personal web projects and applications for continuous learning, and successfully built
-                            two robust, responsive websites for companies such as ROYGBIV and Primelight.
-                            Additionally, I collaborate with fellow tech professionals to create functional web
-                            applications as part of team-driven projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-container">
-                <div class="education-item">
-                    <div class="education-icon">
+                    <div class="service-card">
                         <i class="fas fa-graduation-cap"></i>
+                        <h3>Moodle LMS</h3>
+                        <p>Setup, plugins, performance tuning and offline deployments for thousands of learners.</p>
                     </div>
-                    <div class="education-content">
-                        <h3>B.Sc. Computer Science</h3>
-                        <h4>Al-Hikmah University, Ilorin</h4>
-                        <p class="education-date">Done 2021</p>
+                    <div class="service-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>IT Infrastructure</h3>
+                        <p>Cisco networking, firewalls, VPNs, Windows Server, Active Directory and backups.</p>
                     </div>
-
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
+                    <div class="service-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>IT Support &amp; Training</h3>
+                        <p>Hardware and software support, security awareness and user training for staff and
+                            students.</p>
                     </div>
-                    <div class="education-content">
-                        <h3>Certificate in Python Programming</h3>
-                        <h4>Castush Intergraded Limited</h4>
-                        <p class="education-date">Acquired 2024</p>
-                    </div>
-
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Certificate in Lead Assessor/Training of Trainers (ToT)</h3>
-                        <h4>HKV Academy (Powered by UNIDO)</h4>
-                        <p class="education-date">Acquired 2018</p>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Certificate in Generative AI Mastermind</h3>
-                        <h4>Powerd by Outskill</h4>
-                        <p class="education-date">Acquired 2025</p>
-                    </div>
-
-                </div>
-                <!-- Add certifications here if available -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2 class="section-title">Blog & Insights</h2>
-            <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-blog">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Building an Offline LMS for Summit University</h3>
-                        <p class="blog-date">August 03, 2025</p>
-                        <p>At Summit University, we recently concluded the 2024/2025 academic session. I’m thrilled to
-                            share my
-                            experience building the offline Learning Management System (LMS) that students used for
-                            their general
-                            course exams. Leveraging my front-end development skills, I built this project from scratch
-                            using the
-                            open-source Moodle platform.</p>
-                        <a href="https://www.linkedin.com/posts/aliu-ameen-abdulrahman-aa1651197_softwaredevelopment-webdevelopment-front-activity-7358618947253936129-55uS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC4xGdkBbRKImbeLpnt9uGH3CsiKdzz0RSg"
-                            class="read-more">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Blog Post 2 -->
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-blog">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>From Coding to Prompting: The New Revolution in Software Engineering </h3>
-                        <p class="blog-date">Sep 4, 2025</p>
-                        <p>For decades, software engineering revolved around writing code in languages like Python or
-                            Java, creating
-                            detailed instructions for computers. With the advent of artificial intelligence (AI), a
-                            transformative
-                            skill—prompt engineering—is redefining the field, shifting the focus from coding to
-                            conversing with machines.</p>
-                        <a href="https://medium.com/@aliuame/from-coding-to-prompting-the-new-revolution-in-software-engineering-c84e9de375fe"
-                            class="read-more">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Blog Post 3
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-blog">
-                            <i class="fas fa-server"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Frontend vs Backend: Why I Love Doing Both</h3>
-                        <p class="blog-date">April 10, 2025</p>
-                        <p>The debate between frontend and backend specialization continues, but there are unique
-                            advantages to mastering both sides of web development...</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>aliuame@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <p><a href="https://www.linkedin.com/in/aliu-ameen-abdulrahman-aa1651197/"
-                                target="_blank">linkedin.com/in/Aliuameen</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <p><a href="https://github.com/Ameen360" target="_blank">github.com/Aliu-Ameen</a></p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">📩 Send Message</button>
-                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Skills &amp; Tech Stack</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                            <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                            <div class="skill-item"><i class="fab fa-php"></i> PHP</div>
+                            <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+                            <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cubes"></i> Frameworks &amp; Libraries</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fab fa-react"></i> React.js</div>
+                            <div class="skill-item"><i class="fab fa-laravel"></i> Laravel</div>
+                            <div class="skill-item"><i class="fab fa-python"></i> Django</div>
+                            <div class="skill-item"><i class="fas fa-mobile-screen"></i> React Native</div>
+                            <div class="skill-item"><i class="fas fa-chart-line"></i> Streamlit</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
+                            <div class="skill-item"><i class="fas fa-database"></i> MariaDB</div>
+                            <div class="skill-item"><i class="fas fa-database"></i> SQLite</div>
+                            <div class="skill-item"><i class="fas fa-leaf"></i> MongoDB</div>
+                            <div class="skill-item"><i class="fas fa-gauge-high"></i> Query Optimization</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-toolbox"></i> Tools &amp; Platforms</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+                            <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
+                            <div class="skill-item"><i class="fab fa-gitlab"></i> GitLab</div>
+                            <div class="skill-item"><i class="fas fa-code"></i> VS Code</div>
+                            <div class="skill-item"><i class="fab fa-chrome"></i> Chrome DevTools</div>
+                            <div class="skill-item"><i class="fab fa-npm"></i> npm / Yarn</div>
+                            <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-network-wired"></i> Networking &amp; Infrastructure</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fas fa-route"></i> Cisco Routers &amp; Switches</div>
+                            <div class="skill-item"><i class="fas fa-shield-halved"></i> Firewalls</div>
+                            <div class="skill-item"><i class="fas fa-lock"></i> VPNs</div>
+                            <div class="skill-item"><i class="fas fa-phone"></i> IP Telephony</div>
+                            <div class="skill-item"><i class="fas fa-wifi"></i> LAN / WLAN</div>
+                            <div class="skill-item"><i class="fas fa-chart-area"></i> Network Monitoring</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-desktop"></i> Systems &amp; IT Support</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fab fa-windows"></i> Windows Server</div>
+                            <div class="skill-item"><i class="fas fa-users-gear"></i> Active Directory</div>
+                            <div class="skill-item"><i class="fab fa-microsoft"></i> Microsoft 365</div>
+                            <div class="skill-item"><i class="fab fa-google"></i> Google Workspace</div>
+                            <div class="skill-item"><i class="fas fa-screwdriver-wrench"></i> Hardware Repair</div>
+                            <div class="skill-item"><i class="fas fa-bug"></i> Troubleshooting</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-user-shield"></i> IT Security &amp; Admin</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fas fa-virus-slash"></i> Endpoint Security</div>
+                            <div class="skill-item"><i class="fas fa-rotate"></i> Patching &amp; Upgrades</div>
+                            <div class="skill-item"><i class="fas fa-cloud-arrow-up"></i> Backups &amp; Recovery</div>
+                            <div class="skill-item"><i class="fas fa-file-contract"></i> Asset &amp; Licence Records
+                            </div>
+                            <div class="skill-item"><i class="fas fa-chalkboard-user"></i> Security Awareness Training
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-lightbulb"></i> Practices &amp; Soft Skills</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><i class="fas fa-plug"></i> REST APIs</div>
+                            <div class="skill-item"><i class="fas fa-mobile-screen-button"></i> Responsive Design</div>
+                            <div class="skill-item"><i class="fas fa-pen-ruler"></i> UI/UX Principles</div>
+                            <div class="skill-item"><i class="fas fa-arrows-spin"></i> Agile Collaboration</div>
+                            <div class="skill-item"><i class="fas fa-brain"></i> Generative AI</div>
+                            <div class="skill-item"><i class="fas fa-file-lines"></i> Technical Documentation</div>
+                            <div class="skill-item"><i class="fas fa-people-group"></i> Team Collaboration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project-filters" role="group" aria-label="Filter projects">
+                    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter-btn" data-filter="fullstack" aria-pressed="false">Full
+                        Stack</button>
+                    <button type="button" class="filter-btn" data-filter="frontend"
+                        aria-pressed="false">Front-End</button>
+                    <button type="button" class="filter-btn" data-filter="lms" aria-pressed="false">LMS &amp;
+                        Portals</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- School Management System -->
+                    <article class="project-card" data-category="fullstack">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-school"></i></div>
+                            <span class="project-label">Full Stack</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>School Management System</h3>
+                            <p>A comprehensive school management platform with role-based access and a single login
+                                system with password reset.</p>
+                            <ul class="project-features">
+                                <li>Student &amp; teacher records, leave and attendance management</li>
+                                <li>Exam results, notices, notes, syllabus &amp; timetable uploads</li>
+                                <li>Bus service tracking, dark theme and multi-language support</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span>Full Stack</span>
+                                <span>Role-Based Access</span>
+                                <span>Responsive UI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- EcoReport -->
+                    <article class="project-card" data-category="fullstack">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-seedling"></i></div>
+                            <span class="project-label">Full Stack</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>EcoReport Web Application</h3>
+                            <p>An environmental reporting platform that lets users log, track and visualise
+                                ecological data, with a Python/Django backend and a React.js front end.</p>
+                            <div class="project-tech">
+                                <span>React.js</span>
+                                <span>Django</span>
+                                <span>Python</span>
+                                <span>REST API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Summit University Portals -->
+                    <article class="project-card" data-category="lms fullstack">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-user-graduate"></i></div>
+                            <span class="project-label">Portals</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Summit University Portals</h3>
+                            <p>Student, staff and academic result portals serving the university community, with
+                                backend optimisations in Python and PHP that improved performance and data
+                                processing.</p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>Python</span>
+                                <span>MySQL</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.summituniversity.edu.ng/myportal/students/" class="btn btn-sm"
+                                    target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i>
+                                    Live</a>
+                                <a href="https://github.com/SUN-Hub-Group/new-student-portal" class="btn btn-sm"
+                                    target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Moodle LMS -->
+                    <article class="project-card" data-category="lms">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-book-open-reader"></i></div>
+                            <span class="project-label">LMS</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Moodle LMS — Online &amp; Offline</h3>
+                            <p>Built and administer Summit University's Moodle LMS for 2,000+ users, including an
+                                offline deployment students used for general course exams — course setup, plugin
+                                management and performance tuning.</p>
+                            <div class="project-tech">
+                                <span>Moodle</span>
+                                <span>PHP</span>
+                                <span>MariaDB</span>
+                                <span>Server Admin</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/aliu-ameen-abdulrahman-aa1651197_softwaredevelopment-webdevelopment-front-activity-7358618947253936129-55uS"
+                                    class="btn btn-sm" target="_blank" rel="noopener"><i class="fas fa-book"></i> Case
+                                    Study</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Roygbiv -->
+                    <article class="project-card" data-category="frontend">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-flask"></i></div>
+                            <span class="project-label">Front-End</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Roygbiv Corporate Website</h3>
+                            <p>The official website for Roygbiv Analytical &amp; Environmental Services — accredited
+                                laboratory analysis and environmental consulting — with responsive design and
+                                SEO-friendly markup.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>SEO</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://ameen360.github.io/Roygbiv/" class="btn btn-sm" target="_blank"
+                                    rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Ameen360/Roygbiv" class="btn btn-sm" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Primelight -->
+                    <article class="project-card" data-category="frontend">
+                        <div class="project-image">
+                            <div class="placeholder-project"><i class="fas fa-hospital"></i></div>
+                            <span class="project-label">Front-End</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Primelight Business Website</h3>
+                            <p>A fully responsive rehab services site with appointment booking and therapy
+                                information pages, built on modern UI/UX principles with cross-browser
+                                compatibility.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://primelight.online/" class="btn btn-sm" target="_blank"
+                                    rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Ameen360/primelight" class="btn btn-sm" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2026 – Present</p>
+                            <h3>Front-End Engineer <span class="tag">Remote</span></h3>
+                            <h4>LAK MED Nigeria Ltd.</h4>
+                            <ul>
+                                <li>Update and maintain front-end system designs for the corporate website and the
+                                    patient/customer-facing mobile app of a telemedicine platform.</li>
+                                <li>Implement responsive, accessible UI components for patients and healthcare
+                                    providers across web and mobile.</li>
+                                <li>Translate design mockups into pixel-perfect, performant front-end code with the
+                                    product and backend teams.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2024 – Present</p>
+                            <h3>Programmer II</h3>
+                            <h4>Summit University, Offa</h4>
+                            <ul>
+                                <li>Design and maintain full-stack web applications — student, staff and academic
+                                    result portals — serving hundreds of users.</li>
+                                <li>Architect and optimise backend systems in Python and PHP, improving portal
+                                    performance and data processing efficiency.</li>
+                                <li>Build, administer and maintain the Moodle LMS for 2,000+ users online and offline,
+                                    including course setup, plugins and performance tuning.</li>
+                                <li>Install and maintain Cisco routers and switches, firewalls, VPNs and IP telephony
+                                    for high availability and minimal downtime.</li>
+                                <li>Administer Windows Server, Active Directory and Microsoft 365 / Google Workspace;
+                                    manage endpoint security, patching and scheduled backups.</li>
+                                <li>Provide hardware and software support and security-awareness training to faculty,
+                                    staff and students; maintain IT asset and licence records.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2023 – 2024</p>
+                            <h3>Software Development Intern <span class="tag">Python Stack</span></h3>
+                            <h4>Castush Integrated Limited</h4>
+                            <ul>
+                                <li>Developed and co-developed Python web applications focused on scalability and code
+                                    quality.</li>
+                                <li>Conducted code reviews and mentored junior developers, raising project standards.
+                                </li>
+                                <li>Researched emerging Python libraries, producing demo projects and documentation
+                                    that sped up team adoption and onboarding.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2023 – 2024</p>
+                            <h3>Data Entry &amp; HR Operations <span class="tag">NYSC</span></h3>
+                            <h4>CELPLAS Industries Free Zone Company (CIFZC)</h4>
+                            <ul>
+                                <li>Managed employee records and payroll data in enterprise database systems with
+                                    accuracy and compliance.</li>
+                                <li>Tracked attendance with electronic timekeeping systems and resolved pay queries.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2020 – 2022</p>
+                            <h3>Customer Service Officer</h3>
+                            <h4>Roygbiv Environmental Services Nigeria Ltd.</h4>
+                            <ul>
+                                <li>Frontline contact for customer enquiries, resolving operational issues promptly
+                                    and professionally.</li>
+                                <li>Supported the lead consultant and prepared timely reports for management
+                                    decision-making.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2015 – 2016</p>
+                            <h3>Industrial Training — Network &amp; Telecom</h3>
+                            <h4>Central Bank of Nigeria, Ilorin Branch</h4>
+                            <ul>
+                                <li>Practical experience in network administration, telephone system support and IT
+                                    security protocols under senior engineers.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2014 – 2015</p>
+                            <h3>Web Development Trainee <span class="tag">SIWES</span></h3>
+                            <h4>Plat Technologies Global ICT Solutions</h4>
+                            <ul>
+                                <li>Built responsive web pages with HTML5 and CSS3 and adaptive layouts for multiple
+                                    screen sizes.</li>
+                                <li>Contributed to client-facing web applications under professional supervision.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title">Education &amp; Certifications</h2>
+                <div class="education-columns">
+                    <div class="education-container">
+                        <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="education-content">
+                                <h4>Postgraduate Diploma (PGD) in Computer Science</h4>
+                                <p class="education-school">Summit University, Offa</p>
+                                <p class="education-date">2024</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="education-content">
+                                <h4>B.Sc. Computer Science (Honours)</h4>
+                                <p class="education-school">Al-Hikmah University, Ilorin</p>
+                                <p class="education-date">2021</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fas fa-school"></i></div>
+                            <div class="education-content">
+                                <h4>West African Senior School Certificate (WASSCE)</h4>
+                                <p class="education-school">Five Ways International College</p>
+                                <p class="education-date">2011</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-container">
+                        <h3 class="column-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fas fa-brain"></i></div>
+                            <div class="education-content">
+                                <h4>Generative AI Mastermind</h4>
+                                <p class="education-school">Outskill</p>
+                                <p class="education-date">2025</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fab fa-python"></i></div>
+                            <div class="education-content">
+                                <h4>Python Web Stack Development</h4>
+                                <p class="education-school">Castush Integrated Limited</p>
+                                <p class="education-date">2024</p>
+                            </div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-icon"><i class="fas fa-award"></i></div>
+                            <div class="education-content">
+                                <h4>Lead Assessor / Training of Trainers (ToT)</h4>
+                                <p class="education-school">HKV Academy (UNIDO)</p>
+                                <p class="education-date">2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title">Blog &amp; Insights</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="placeholder-blog"><i class="fas fa-mobile-alt"></i></div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Building an Offline LMS for Summit University</h3>
+                            <p class="blog-date"><time datetime="2025-08-03">August 3, 2025</time></p>
+                            <p>At Summit University, we recently concluded the 2024/2025 academic session. I'm
+                                thrilled to share my experience building the offline Learning Management System (LMS)
+                                that students used for their general course exams — built from scratch on the
+                                open-source Moodle platform.</p>
+                            <a href="https://www.linkedin.com/posts/aliu-ameen-abdulrahman-aa1651197_softwaredevelopment-webdevelopment-front-activity-7358618947253936129-55uS"
+                                class="read-more" target="_blank" rel="noopener">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="placeholder-blog"><i class="fas fa-code-branch"></i></div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>From Coding to Prompting: The New Revolution in Software Engineering</h3>
+                            <p class="blog-date"><time datetime="2025-09-04">September 4, 2025</time></p>
+                            <p>For decades, software engineering revolved around writing code in languages like Python
+                                or Java. With the advent of AI, a transformative skill — prompt engineering — is
+                                redefining the field, shifting the focus from coding to conversing with machines.</p>
+                            <a href="https://medium.com/@aliuame/from-coding-to-prompting-the-new-revolution-in-software-engineering-c84e9de375fe"
+                                class="read-more" target="_blank" rel="noopener">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-intro">Have a project, a role or a question? I'd love to hear from you.</p>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:aliuame@gmail.com">aliuame@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:+2348132122133">+234 813 212 2133</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <span class="contact-label">WhatsApp</span>
+                                <a href="https://wa.me/qr/W5W3NH46KYIWF1"
+                                    target="_blank" rel="noopener">Chat on WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <p>Ilorin, Kwara, Nigeria · Remote</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/aliu-ameen-abdulrahman-aa1651197/" target="_blank"
+                                    rel="noopener">Aliu-Ameen Abdulrahman</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/Ameen360" target="_blank"
+                                    rel="noopener">github.com/Ameen360</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" autocomplete="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" autocomplete="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" data-channel="whatsapp">
+                                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                                </button>
+                                <button type="submit" class="btn btn-secondary" data-channel="email">
+                                    <i class="fas fa-paper-plane"></i> Send via Email
+                                </button>
+                            </div>
+                            <p class="form-note">Your message opens in WhatsApp or your email app, ready to send.</p>
+                            <div class="form-message" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2025 Aliu-Ameen Abdulrahman — From concept to code — crafting the web that works.</p>
+            <p>© <span id="year">2026</span> Aliu-Ameen Abdulrahman — From concept to code — crafting the web that
+                works.</p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/aliuameen" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/aliuameen" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:aliuameen@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/aliu-ameen-abdulrahman-aa1651197/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ameen360" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="mailto:aliuame@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Scripts -->
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js?v=2"></script>
 </body>
 
 </html>
