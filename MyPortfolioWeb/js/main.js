@@ -208,8 +208,14 @@
                     '*Subject:* ' + subject + '\n\n' +
                     message;
 
-                window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text),
-                    '_blank', 'noopener');
+                // Phones: wa.me opens the WhatsApp app straight away.
+                // Computers: go straight to WhatsApp Web and skip the "Open app" page.
+                const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                const waUrl = isMobile
+                    ? 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text)
+                    : 'https://web.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(text);
+
+                window.open(waUrl, '_blank', 'noopener');
 
                 showFormMessage('WhatsApp should open with your message ready. Just tap Send. ' +
                     'If it doesn\'t, message me on WhatsApp at +234 915 781 8147.', 'success');
