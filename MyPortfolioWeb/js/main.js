@@ -200,7 +200,25 @@
             // Which button was clicked: "whatsapp" or "email"
             const channel = (e.submitter && e.submitter.dataset.channel) || 'whatsapp';
 
-            // No backend: hand the message to WhatsApp or the visitor's email app
+            // Every message is also emailed to me through FormSubmit (formsubmit.co),
+            // whichever button the visitor used.
+            const emailCopy = fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                    sent_via: channel === 'whatsapp' ? 'WhatsApp button' : 'Email button',
+                    _subject: 'Portfolio message: ' + subject,
+                    _replyto: email,
+                    _template: 'table'
+                })
+            }).then(function (res) {
+                if (!res.ok) throw new Error('FormSubmit returned ' + res.status);
+            });
+
             if (channel === 'whatsapp') {
                 const text = '*New message from your portfolio*\n\n' +
                     '*Name:* ' + name + '\n' +
@@ -215,20 +233,20 @@
                     ? 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text)
                     : 'https://web.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(text);
 
+                // Open WhatsApp right away (not after the email request) so pop-up blockers allow it
                 window.open(waUrl, '_blank', 'noopener');
+                emailCopy.catch(function () {});
 
                 showFormMessage('WhatsApp should open with your message ready. Just tap Send. ' +
                     'If it doesn\'t, message me on WhatsApp at +234 915 781 8147.', 'success');
             } else {
-                const body = message + '\n\n— ' + name + ' (' + email + ')';
-                const mailto = 'mailto:' + CONTACT_EMAIL +
-                    '?subject=' + encodeURIComponent(subject) +
-                    '&body=' + encodeURIComponent(body);
-
-                window.location.href = mailto;
-
-                showFormMessage('Your email app should open with the message ready to send. ' +
-                    'If it doesn\'t, email me directly at ' + CONTACT_EMAIL + '.', 'success');
+                // Email button: send straight from the site, no email app needed
+                showFormMessage('Sending…', 'success');
+                emailCopy.then(function () {
+                    showFormMessage('Thanks, ' + name + '! Your message has been sent. I\'ll reply to ' + email + ' soon.', 'success');
+                }).catch(function () {
+                    showFormMessage('Sorry, your message couldn\'t be sent. Please email me directly at ' + CONTACT_EMAIL + '.', 'error');
+                });
             }
 
             contactForm.reset();
